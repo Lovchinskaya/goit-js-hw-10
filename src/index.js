@@ -1,5 +1,4 @@
 
-import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
 import { fetchBreeds } from './cat-api';
 
@@ -10,7 +9,7 @@ function getEvents(query){
 
 const events = data;
 //renderEvents(events)
-//console.log(events);
+console.log(events);
    })
 }
 getEvents('cat')
