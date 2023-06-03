@@ -1,28 +1,29 @@
-const API = "live_8LD487u3PW0ACw4mo3clIsgLpSj0QCO01hF4spptpbumXSHheMAfCVCsK7GblUyB";
-const UrlGeneral = "https://api.thecatapi.com/v1/breeds"
-const  urlOfImages = "https://api.thecatapi.com/v1/images"
+const breedsUrl = 'https://api.thecatapi.com/v1/breeds';
+const picUrl = 'https://api.thecatapi.com/v1/images';
 
+//cat key
+const KEY =
+  'live_8LD487u3PW0ACw4mo3clIsgLpSj0QCO01hF4spptpbumXSHheMAfCVCsK7GblUyB';
+
+//fuction to fetchBreeds
 const fetchBreeds = () => {
-    return fetch(`${UrlGeneral}?api_key=${API}`)
-        .then((response) => {
-        if (!response.ok) {
-            throw new Error(response.status);
-        }
-        return response.json();    
-    })
-    .catch((error) => console.log(error));
-}
+  return fetch(`${breedsUrl}?api_key=${KEY}`).then(response => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  });
+};
 
-//function finding breed of specific cat
+//fuction to cat by its breeds
+const findCatViaBreed = breedId => {
+  return fetch(`${picUrl}/${breedId}?api_key=${KEY}`).then(response => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  });
+};
 
-const findBreedOfCat = (breedId) => {
-    return fetch(`${urlOfImages}/?api_key=${API}`).then(response => {
-        if (!response.ok) {
-            throw new Error(response.status);
-          }
-          return response.json();
-        });
-}
 
-export { fetchBreeds, findBreedOfCat }
-
+export { fetchBreeds, findCatViaBreed };

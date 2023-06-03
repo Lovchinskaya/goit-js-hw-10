@@ -1,7 +1,7 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
 body {
-  background-color: #f5f0ce;
+  background-color: #63fafc;
 }
 
 img {
@@ -30,8 +30,10 @@ img {
 }
 
 .loader {
-  width: 48px;
-  height: 48px;
+  margin-left: 45%;
+  align-items: center;
+  width: 148px;
+  height: 148px;
   border: 5px dotted #2596be;
   border-radius: 50%;
   display: inline-block;
@@ -49,21 +51,27 @@ img {
   }
 }
 
-.unvisible {
+.blind {
   display: none;
 }
-
+.breed-select {
+  width: 70%;
+  margin: 0 auto;
+  margin-left: 30%;
+}
 .cat-info-desc-desc,
 .cat-info-desc-temp {
   line-height: 150%;
+  font-size: 25px;
 }
 
 .cat-info {
+  width: 80%;
+  margin: 0 auto;
   margin-top: 25px;
-  margin-bottom: 25px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px;
 }
 
 @media screen and (min-width: 768px) {
@@ -71,5 +79,3 @@ img {
     flex-direction: row;
   }
 }
-
-  
