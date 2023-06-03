@@ -3,7 +3,7 @@ import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
 
 const renderBreeds = breeds => {
-    const markup = breeds.map((breed) => {
+    const markup = breeds.map(breed => {
 return `<option value="${breed.name}">${breed.name}</option>`
     }).join('');
     selectDropDown.insertAdjacentHTML('afterend', markup)
@@ -13,4 +13,4 @@ return `<option value="${breed.name}">${breed.name}</option>`
     });
 }
 
-export {renderBreeds}
+export { renderBreeds }
